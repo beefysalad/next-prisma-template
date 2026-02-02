@@ -1,18 +1,21 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTest, useUpdateTest } from "./shared/hooks/test/useTest";
 
 export default function Home() {
   const { data, isLoading, isError } = useTest();
   const updateTestMutation = useUpdateTest();
+  const [optimisticValue, setOptimisticValue] = useState(0);
 
   const onButtonClick = () => {
+    setOptimisticValue((prev:number) => prev + 1);
     updateTestMutation.mutateAsync();
   };
 
   useEffect(() => {
+    setOptimisticValue(data?.value || 0);
     console.log("Test data:", data, isLoading);
   }, [data, isLoading]);
 
@@ -63,7 +66,7 @@ export default function Home() {
                     DB Test Value
                   </p>
                   <h2 className='text-7xl md:text-8xl font-black text-zinc-900 dark:text-zinc-100'>
-                    {data?.value || "N/A"}
+                    {optimisticValue || "N/A"}
                   </h2>
                 </div>
 
