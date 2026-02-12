@@ -40,9 +40,6 @@ export default function RootLayout({
         >
           <SessionProvider>
             <QueryProvider>
-              <div className="absolute top-4 right-4 z-50">
-                <ThemeToggle />
-              </div>
               {children}
               <Toaster richColors position="bottom-center" />
             </QueryProvider>

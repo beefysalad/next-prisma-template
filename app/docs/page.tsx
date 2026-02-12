@@ -15,20 +15,24 @@ import {
   Github,
 } from 'lucide-react'
 import Link from 'next/link'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 export default function DocsPage() {
   return (
     <div className="min-h-screen bg-white text-zinc-900 selection:bg-zinc-900 selection:text-white dark:bg-neutral-950 dark:text-neutral-50 dark:selection:bg-neutral-50 dark:selection:text-neutral-900">
       <div className="mx-auto max-w-5xl px-6 py-20">
-        <Link href="/">
-          <Button
-            variant="ghost"
-            className="mb-12 gap-2 rounded-full border border-zinc-200 bg-zinc-50 dark:border-neutral-800 dark:bg-neutral-900"
-          >
-            <ArrowLeft className="size-4" />
-            Back to Home
-          </Button>
-        </Link>
+        <div className="mb-12 flex items-center justify-between">
+          <Link href="/">
+            <Button
+              variant="ghost"
+              className="gap-2 rounded-full border border-zinc-200 bg-zinc-50 dark:border-neutral-800 dark:bg-neutral-900"
+            >
+              <ArrowLeft className="size-4" />
+              Back to Home
+            </Button>
+          </Link>
+          <ThemeToggle />
+        </div>
 
         <div className="space-y-20">
           <header className="space-y-6">

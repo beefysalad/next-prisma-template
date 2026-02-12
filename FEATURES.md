@@ -14,8 +14,10 @@ This document tracks the core features and technologies implemented in the **Nex
 ## 🎨 Premium Experience
 
 - **Lander**: A modern, high-conversion landing page with interaction-ready elements.
+- **Dashboard Hub**: A clean, high-contrast Zinc console for authenticated users.
+- **What's New Modal**: An automated, persistence-aware overlay to announce template updates.
 - **Live Auth Demo**: Interactive section on the landing page to showcase the authentication flow.
-- **Glassmorphic Auth Forms**: Redesigned Login and Register forms with floating gradients and backdrop-blurs.
+- **Glassmorphic Auth Forms**: Redesigned Login and Register forms with a clean grid and card aesthetic.
 - **Theming**: Full Light and Dark mode support out of the box using `next-themes`.
 - **Aesthetics**: Consistent use of rounded-full buttons, high-contrast palettes, and micro-interactions.
 

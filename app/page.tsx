@@ -13,6 +13,7 @@ import {
   Zap,
 } from 'lucide-react'
 import Link from 'next/link'
+import { ThemeToggle } from '@/components/theme-toggle'
 import { useState } from 'react'
 
 export default function Home() {
@@ -28,6 +29,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white text-zinc-900 selection:bg-zinc-900 selection:text-white dark:bg-neutral-950 dark:text-neutral-50 dark:selection:bg-neutral-50 dark:selection:text-neutral-900">
+      <div className="absolute top-6 right-6 z-50">
+        <ThemeToggle />
+      </div>
       <section className="relative overflow-hidden px-6 pt-32 pb-24 md:pt-40 md:pb-32">
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:64px_64px] dark:bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)]" />
 
