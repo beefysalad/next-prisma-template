@@ -14,6 +14,7 @@ A modern Next.js 16 boilerplate with Prisma ORM, PostgreSQL, TypeScript, and Tai
 - **Language**: TypeScript
 - **Package Manager**: npm
 - **Linting**: ESLint with Next.js config
+- **Formatting**: Prettier with Tailwind CSS plugin
 
 ## Prerequisites
 
@@ -147,6 +148,8 @@ The project uses Tailwind CSS for styling with shadcn/ui components. Components 
 - `npm run build` - Build for production (includes database setup)
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
+- `npm run format` - Run Prettier to format code
+- `npm run format:check` - Check code formatting with Prettier
 - `npm run db:seed` - Seed the database
 
 ## Deployment

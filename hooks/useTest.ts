@@ -1,19 +1,19 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { getTestdata, testMutationFn } from "@/lib/api/test";
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { getTestdata, testMutationFn } from '@/lib/api/test'
 
 export const useTest = () => {
   return useQuery({
-    queryKey: ["test"],
+    queryKey: ['test'],
     queryFn: getTestdata,
-  });
-};
+  })
+}
 
 export const useUpdateTest = () => {
-  const queryClient = useQueryClient();
+  const queryClient = useQueryClient()
   return useMutation({
     mutationFn: testMutationFn,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["test"] });
+      queryClient.invalidateQueries({ queryKey: ['test'] })
     },
-  });
-};
+  })
+}

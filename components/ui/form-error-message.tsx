@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react'
 
 interface FormErrorMessageProps {
-  message: string | undefined;
+  message: string | undefined
 }
 const FormErrorMessage = ({ message }: FormErrorMessageProps) => {
-  return <div className='text-sm text-destructive'>{message || ""}</div>;
-};
+  return <div className="text-destructive text-sm">{message || ''}</div>
+}
 
-export default FormErrorMessage;
+export default FormErrorMessage

@@ -1,53 +1,53 @@
-import NextAuth from "next-auth";
-import { PrismaAdapter } from "@auth/prisma-adapter";
-import prisma from "./prisma";
-import Credentials from "next-auth/providers/credentials";
-import bcrypt from "bcryptjs";
-import authConfig from "./auth.config";
+import NextAuth from 'next-auth'
+import { PrismaAdapter } from '@auth/prisma-adapter'
+import prisma from './prisma'
+import Credentials from 'next-auth/providers/credentials'
+import bcrypt from 'bcryptjs'
+import authConfig from './auth.config'
 
 type UserWithPassword =
   | (Awaited<ReturnType<typeof prisma.user.findUnique>> & {
-      hashedPassword?: string | null;
+      hashedPassword?: string | null
     })
-  | null;
+  | null
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   adapter: PrismaAdapter(prisma),
   session: {
-    strategy: "jwt",
+    strategy: 'jwt',
   },
   ...authConfig,
   providers: [
     Credentials({
       async authorize(credentials) {
         if (
-          typeof credentials?.email !== "string" ||
-          typeof credentials?.password !== "string"
+          typeof credentials?.email !== 'string' ||
+          typeof credentials?.password !== 'string'
         ) {
-          return null;
+          return null
         }
-        const email = credentials.email.toLowerCase();
-        const password = credentials.password;
+        const email = credentials.email.toLowerCase()
+        const password = credentials.password
 
         const user = (await prisma.user.findUnique({
           where: {
             email,
           },
-        })) as UserWithPassword;
+        })) as UserWithPassword
 
-        const hashedPassword = user?.hashedPassword;
+        const hashedPassword = user?.hashedPassword
 
         if (!hashedPassword) {
-          return null;
+          return null
         }
-        const isPasswordValid = await bcrypt.compare(password, hashedPassword);
+        const isPasswordValid = await bcrypt.compare(password, hashedPassword)
 
         if (!isPasswordValid) {
-          return null;
+          return null
         }
 
-        return user;
+        return user
       },
     }),
   ],
-});
+})

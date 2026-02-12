@@ -1,6 +1,6 @@
-import prisma from "@/lib/prisma";
-import bcrypt from "bcryptjs";
-import { TRegisterSchemaApi } from "../schemas/auth";
+import prisma from '@/lib/prisma'
+import bcrypt from 'bcryptjs'
+import { TRegisterSchemaApi } from '../schemas/auth'
 
 export async function registerUser(data: TRegisterSchemaApi) {
   try {
@@ -8,20 +8,20 @@ export async function registerUser(data: TRegisterSchemaApi) {
       where: {
         email: data.email,
       },
-    });
+    })
     if (findExisting) {
-      throw new Error("User already exists");
+      throw new Error('User already exists')
     }
-    const hashedPassword = await bcrypt.hash(data.password, 10);
+    const hashedPassword = await bcrypt.hash(data.password, 10)
     const user = await prisma.user.create({
       data: {
         email: data.email,
         hashedPassword: hashedPassword,
         name: data.name,
       },
-    });
-    return user;
+    })
+    return user
   } catch (error) {
-    throw error;
+    throw error
   }
 }

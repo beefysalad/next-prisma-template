@@ -1,28 +1,28 @@
-import Credentials from "next-auth/providers/credentials";
-import type { NextAuthConfig } from "next-auth";
+import Credentials from 'next-auth/providers/credentials'
+import type { NextAuthConfig } from 'next-auth'
 
 export default {
   providers: [
     Credentials({
       async authorize() {
-        return null;
+        return null
       },
     }),
   ],
   callbacks: {
     async session({ session, token }) {
       if (session.user && token.sub) {
-        session.user.id = token.sub;
+        session.user.id = token.sub
       }
-      return session;
+      return session
     },
     async jwt({ token, user }) {
       if (user) {
-        token.sub = user.id;
-        token.email = user.email;
-        token.name = user.name;
+        token.sub = user.id
+        token.email = user.email
+        token.name = user.name
       }
-      return token;
+      return token
     },
   },
-} satisfies NextAuthConfig;
+} satisfies NextAuthConfig
