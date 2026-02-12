@@ -42,7 +42,13 @@ npm install
 cp .env.example .env.local
 ```
 
-4. Configure your database URL in `.env.local`:
+4. Generate an authentication secret:
+
+```bash
+npx auth secret
+```
+
+5. Configure your database URL in `.env.local`:
 
 ```
 DATABASE_URL="postgresql://username:password@localhost:5432/your_database"
@@ -172,3 +178,11 @@ npm run start
 ## Contributing
 
 Feel free to submit issues and enhancement requests!
+
+## Credits
+
+Created by **John Patrick Ryan Mandal**
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
