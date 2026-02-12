@@ -1,0 +1,38 @@
+# Project Features
+
+This document tracks the core features and technologies implemented in the **Next.js Prisma Boilerplate**.
+
+## 🚀 Core Stack
+
+- **Framework**: [Next.js 16 (App Router)](https://nextjs.org/) - High-performance React framework.
+- **Language**: [TypeScript](https://www.typescriptlang.org/) - Type-safe development.
+- **Database**: [Prisma 7](https://www.prisma.io/) - Modern ORM with PostgreSQL support.
+- **Authentication**: [Auth.js v5 (Beta)](https://authjs.dev/) - Secure, flexible, and Edge-compatible authentication.
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/) - Utility-first CSS framework with native cascade support.
+- **Components**: [shadcn/ui](https://ui.shadcn.com/) - Beautifully designed components built with Radix UI.
+
+## 🎨 Premium Experience
+
+- **Lander**: A modern, high-conversion landing page with interaction-ready elements.
+- **Live Auth Demo**: Interactive section on the landing page to showcase the authentication flow.
+- **Glassmorphic Auth Forms**: Redesigned Login and Register forms with floating gradients and backdrop-blurs.
+- **Theming**: Full Light and Dark mode support out of the box using `next-themes`.
+- **Aesthetics**: Consistent use of rounded-full buttons, high-contrast palettes, and micro-interactions.
+
+## 🛠 Developer Experience
+
+- **Documentation**: Comprehensive `/docs` page detailing setup, architecture, and customization.
+- **Form Management**: Standardized integration of `React Hook Form` and `Zod` validation.
+- **State Management**: [TanStack Query](https://tanstack.com/query/latest) (React Query) for robust server-state handling.
+- **Route Protection**: Global middleware-based protection for private and public routes.
+- **Code Quality**: Prettier configured and enforced for a clean, consistent codebase.
+- **Folder Structure**: Feature-based directory organization for scalability.
+
+## 📦 Database & Models
+
+- **Standard Schemas**: Pre-configured `User`, `Account`, and `Count` models.
+- **Database Tools**: Scripts for seeding (`npm run db:seed`) and local management via Prisma Studio.
+
+---
+
+_Last Updated: February 12, 2026_

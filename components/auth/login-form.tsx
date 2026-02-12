@@ -29,10 +29,7 @@ export const LoginForm = () => {
 
   return (
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-white px-4 selection:bg-zinc-900 selection:text-white dark:bg-neutral-950 dark:selection:bg-neutral-50 dark:selection:text-neutral-900">
-      {/* Background Gradients */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-[10%] -left-[10%] size-[40%] rounded-full bg-emerald-500/10 blur-[120px] dark:bg-emerald-500/5" />
-        <div className="absolute -right-[10%] -bottom-[10%] size-[40%] rounded-full bg-purple-500/10 blur-[120px] dark:bg-purple-500/5" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:40px_40px] dark:bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)]" />
       </div>
 
@@ -68,7 +65,7 @@ export const LoginForm = () => {
                   {...form.register('email')}
                   id="email"
                   type="email"
-                  placeholder="name@example.com"
+                  placeholder="patrick@example.com"
                   disabled={loginMutation.isPending}
                   className="h-11 border-zinc-200 bg-transparent pl-10 transition-all focus:border-zinc-900 focus:ring-4 focus:ring-zinc-900/5 dark:border-neutral-800 dark:focus:border-neutral-50 dark:focus:ring-neutral-50/5"
                 />

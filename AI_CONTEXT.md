@@ -91,3 +91,8 @@ This file serves as the primary source of truth for AI agents working on this pr
 - `npm run lint`: Run ESLint.
 - `npm run db:seed`: Seed the database.
 - `npx prisma studio`: Open Prisma Studio.
+
+## Documentation & Tracking
+
+- Keep the `/docs` page updated with any architectural changes.
+- **CRITICAL**: Every time a new feature is added or an existing one is modified, the `FEATURES.md` file in the root directory **MUST** be updated to reflect the current state of the boilerplate. This ensures a clear and up-to-date roadmap/feature list for users and collaborators.

@@ -239,8 +239,9 @@ export default function Home() {
             Want to contribute?
           </h2>
           <p className="mb-12 text-lg text-zinc-600 dark:text-neutral-400">
-            Found a bug? Have an idea? Open an issue or submit a PR. Just keep
-            it clean and follow the existing patterns.
+            Found a bug? Have an idea? Wanna collaborate on this? Im always open
+            to collaborations so open an issue or submit a PR. Just keep it
+            clean and follow the existing patterns.
           </p>
 
           <div className="space-y-8">
@@ -252,12 +253,29 @@ export default function Home() {
             <ContributeStep
               num="2"
               title="Make your changes"
-              desc="Create a feature branch. Keep commits atomic. Write code that doesn't suck."
+              desc="Create a feature branch. Keep commits atomic. Write code that doesn't suck (even though my code in here sucks :3)."
             />
             <ContributeStep
               num="3"
               title="Open a pull request"
-              desc="Describe what you changed and why. I'll review it when I can."
+              desc="Describe what you changed and why. I'll review it when I can (Ill probably do a LGTM right away~)."
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-zinc-100 px-6 py-24 dark:border-neutral-900">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
+            Contributors
+          </h2>
+          <p className="mb-12 text-zinc-600 dark:text-neutral-400">
+            The lovely people who made this template possible.
+          </p>
+          <div className="flex flex-wrap justify-center gap-12">
+            <Contributor
+              name="beefysalad"
+              github="https://github.com/beefysalad"
             />
           </div>
         </div>
@@ -338,5 +356,22 @@ function ContributeStep({
         <p className="text-zinc-600 dark:text-neutral-400">{desc}</p>
       </div>
     </div>
+  )
+}
+
+function Contributor({ name, github }: { name: string; github: string }) {
+  return (
+    <Link
+      href={github}
+      target="_blank"
+      className="group flex flex-col items-center gap-2"
+    >
+      <div className="flex size-16 items-center justify-center rounded-full border border-zinc-200 bg-white shadow-lg shadow-zinc-200/50 transition-all group-hover:scale-110 group-hover:border-zinc-900 group-hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-none dark:group-hover:border-neutral-50">
+        <Github className="size-8 text-zinc-400 group-hover:text-zinc-900 dark:text-neutral-500 dark:group-hover:text-neutral-100" />
+      </div>
+      <span className="text-sm font-bold text-zinc-600 group-hover:text-zinc-900 dark:text-neutral-400 dark:group-hover:text-neutral-100">
+        {name}
+      </span>
+    </Link>
   )
 }

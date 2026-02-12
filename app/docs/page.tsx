@@ -12,6 +12,7 @@ import {
   FileCode,
   Lock,
   Boxes,
+  Github,
 } from 'lucide-react'
 import Link from 'next/link'
 
@@ -378,6 +379,33 @@ npm install`}</code>
                   marketing site.
                 </p>
               </div>
+            </div>
+          </section>
+
+          <section className="space-y-8 border-t border-zinc-200 pt-16 dark:border-neutral-800">
+            <div className="flex items-center gap-3">
+              <div className="flex size-10 items-center justify-center rounded-xl bg-indigo-500 text-white">
+                <Github className="size-5" />
+              </div>
+              <h2 className="text-3xl font-bold">Contributors</h2>
+            </div>
+            <p className="text-zinc-600 dark:text-neutral-400">
+              Shoutout to everyone below for contributing to this boilerplate!
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="https://github.com/beefysalad"
+                target="_blank"
+                className="group flex items-center gap-3 rounded-2xl border border-zinc-200 bg-zinc-50/50 p-4 transition-all hover:border-zinc-900 hover:bg-white dark:border-neutral-800 dark:bg-neutral-900/30 dark:hover:border-neutral-50 dark:hover:bg-neutral-900"
+              >
+                <div className="flex size-10 items-center justify-center rounded-full bg-zinc-900 text-white dark:bg-neutral-50 dark:text-neutral-900">
+                  <Github className="size-5" />
+                </div>
+                <div>
+                  <div className="font-bold">beefysalad</div>
+                  <div className="text-xs text-zinc-500">Main Contributor</div>
+                </div>
+              </Link>
             </div>
           </section>
 

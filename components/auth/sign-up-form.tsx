@@ -30,10 +30,8 @@ const SignUpForm = () => {
 
   return (
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-white px-4 selection:bg-zinc-900 selection:text-white dark:bg-neutral-950 dark:selection:bg-neutral-50 dark:selection:text-neutral-900">
-      {/* Background Gradients */}
+      {/* Grid Background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-[10%] -left-[10%] size-[40%] rounded-full bg-blue-500/10 blur-[120px] dark:bg-blue-500/5" />
-        <div className="absolute -right-[10%] -bottom-[10%] size-[40%] rounded-full bg-orange-500/10 blur-[120px] dark:bg-orange-500/5" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:40px_40px] dark:bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)]" />
       </div>
 
@@ -49,9 +47,6 @@ const SignUpForm = () => {
           <h1 className="mt-4 text-4xl font-bold tracking-tight">
             Create account
           </h1>
-          <p className="mt-2 text-zinc-600 dark:text-neutral-400">
-            Join the developers building with this template
-          </p>
         </div>
 
         <div className="overflow-hidden rounded-3xl border border-zinc-200 bg-white/50 p-8 shadow-2xl shadow-zinc-200/50 backdrop-blur-xl dark:border-neutral-800 dark:bg-neutral-900/50 dark:shadow-none">
@@ -69,7 +64,7 @@ const SignUpForm = () => {
                   {...form.register('name')}
                   id="name"
                   type="text"
-                  placeholder="John Doe"
+                  placeholder="John Patrick Ryan"
                   disabled={registerMutation.isPending}
                   className="h-11 border-zinc-200 bg-transparent pl-10 transition-all focus:border-zinc-900 focus:ring-4 focus:ring-zinc-900/5 dark:border-neutral-800 dark:focus:border-neutral-50 dark:focus:ring-neutral-50/5"
                 />
