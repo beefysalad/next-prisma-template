@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { getTestdata, testMutationFn } from "./test.service";
+import { getTestdata, testMutationFn } from "@/lib/api/test";
 
 export const useTest = () => {
   return useQuery({

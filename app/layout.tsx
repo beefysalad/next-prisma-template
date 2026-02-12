@@ -4,6 +4,8 @@ import "./globals.css";
 import { QueryProvider } from "./providers/query-provider";
 import { ThemeProvider } from "./providers/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { Toaster } from "sonner";
+import { SessionProvider } from "next-auth/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,12 +38,15 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <QueryProvider>
-            <div className='absolute top-4 right-4 z-50'>
-              <ThemeToggle />
-            </div>
-            {children}
-          </QueryProvider>
+          <SessionProvider>
+            <QueryProvider>
+              <div className='absolute top-4 right-4 z-50'>
+                <ThemeToggle />
+              </div>
+              {children}
+              <Toaster richColors position='bottom-center' />
+            </QueryProvider>
+          </SessionProvider>
         </ThemeProvider>
       </body>
     </html>

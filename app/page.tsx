@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
 import { useEffect, useState } from "react";
-import { useTest, useUpdateTest } from "./shared/hooks/test/useTest";
+import { useTest, useUpdateTest } from "@/hooks/useTest";
 
 export default function Home() {
   const { data, isLoading, isError } = useTest();

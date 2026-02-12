@@ -77,14 +77,39 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ├── app/                 # Next.js app router pages and layouts
 ├── components/          # Reusable React components
 │   ├── auth/            # Authentication components
+│   ├── dashboard/       # Dashboard components
 │   └── ui/              # shadcn/ui primitives
-├── hooks/               # Custom React hooks
+├── hooks/               # Custom React hooks (auth mutations, etc.)
 ├── lib/                 # Utility functions and configurations
-│   └── schemas/         # Zod validation schemas
+│   ├── api/             # Client-side API wrappers (Axios)
+│   ├── data/            # Server-side data access logic (Prisma)
+│   ├── schemas/         # Zod validation schemas
+│   ├── auth.ts          # Main NextAuth configuration (Server-side)
+│   ├── auth.config.ts   # Edge-compatible NextAuth config (Middleware)
+│   └── routes.ts        # Route definitions and protection rules
 ├── prisma/             # Database schema and migrations
 ├── public/             # Static assets
+├── middleware.ts       # Next.js middleware for route protection
 └── components.json     # shadcn/ui configuration
 ```
+
+## Authentication
+
+This project uses **NextAuth.js v5** for authentication.
+
+- **Strategy**: JWT (JSON Web Tokens)
+- **Providers**: Credentials (Email/Password)
+- **Protection**: Middleware-based route protection.
+- **Session Management**: `SessionProvider` in `RootLayout`.
+
+### Route Protection Configuration
+
+Routes are defined in `lib/routes.ts`:
+
+- `publicRoutes`: Accessible without login.
+- `authRoutes`: Redirect to dashboard if already logged in.
+- `apiAuthPrefix`: Reserved for auth API requests.
+- `protectedRoutes`: All other routes require authentication.
 
 ## Database
 

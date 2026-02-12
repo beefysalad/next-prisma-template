@@ -35,6 +35,8 @@ This file serves as the primary source of truth for AI agents working on this pr
 │   └── theme-toggle.tsx  # Dark mode toggle
 ├── hooks/                # Custom React Hooks
 ├── lib/                  # Utilities and Libraries
+│   ├── api/              # Client-side API wrappers (Axios)
+│   ├── data/             # Server-side data access logic (Prisma)
 │   ├── schemas/          # Zod validation schemas
 │   ├── auth.ts           # Auth.js configuration
 │   ├── prisma.ts         # Prisma client singleton
