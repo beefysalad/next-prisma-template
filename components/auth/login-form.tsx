@@ -3,7 +3,14 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
-import { Github, Mail, Lock, ArrowRight, Loader2 } from 'lucide-react'
+import {
+  Github,
+  Mail,
+  Lock,
+  ArrowRight,
+  Loader2,
+  ShieldCheck,
+} from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -45,9 +52,6 @@ export const LoginForm = () => {
           <h1 className="mt-4 text-4xl font-bold tracking-tight">
             Welcome back
           </h1>
-          <p className="mt-2 text-zinc-600 dark:text-neutral-400">
-            Sign in to your account to continue building
-          </p>
         </div>
 
         <div className="overflow-hidden rounded-3xl border border-zinc-200 bg-white/50 p-8 shadow-2xl shadow-zinc-200/50 backdrop-blur-xl dark:border-neutral-800 dark:bg-neutral-900/50 dark:shadow-none">
@@ -131,16 +135,39 @@ export const LoginForm = () => {
             </Button>
           </form>
 
-          <div className="mt-8 pt-6 text-center">
-            <p className="text-sm text-zinc-500">
-              Don&apos;t have an account?{' '}
-              <Link
-                href="/register"
-                className="font-bold text-zinc-900 transition-colors hover:text-zinc-700 dark:text-neutral-100 dark:hover:text-neutral-300"
-              >
-                Create one now
-              </Link>
-            </p>
+          <div className="mt-8 space-y-6">
+            <div className="rounded-2xl border border-zinc-100 bg-zinc-50/50 p-4 dark:border-neutral-800 dark:bg-neutral-900/30">
+              <div className="mb-2 flex items-center gap-2 text-[10px] font-bold tracking-wider text-zinc-400 uppercase">
+                <ShieldCheck className="size-3 text-emerald-500" />
+                Sample Account
+              </div>
+              <div className="flex flex-col gap-1.5 font-mono text-xs text-zinc-500 dark:text-neutral-400">
+                <div className="flex justify-between">
+                  <span>Email:</span>
+                  <span className="text-zinc-900 dark:text-neutral-200">
+                    test@test.com
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Pass:</span>
+                  <span className="text-zinc-900 dark:text-neutral-200">
+                    123456
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <p className="text-sm text-zinc-500">
+                Don&apos;t have an account?{' '}
+                <Link
+                  href="/register"
+                  className="font-bold text-zinc-900 transition-colors hover:text-zinc-700 dark:text-neutral-100 dark:hover:text-neutral-300"
+                >
+                  Create one now
+                </Link>
+              </p>
+            </div>
           </div>
         </div>
       </div>

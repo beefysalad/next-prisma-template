@@ -32,33 +32,40 @@ export default function Home() {
       <div className="absolute top-6 right-6 z-50">
         <ThemeToggle />
       </div>
-      <section className="relative overflow-hidden px-6 pt-32 pb-24 md:pt-40 md:pb-32">
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:64px_64px] dark:bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)]" />
+      <section className="relative overflow-hidden px-6 pt-32 pb-24 md:pt-44 md:pb-40">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000000a_1px,transparent_1px),linear-gradient(to_bottom,#0000000a_1px,transparent_1px)] bg-[size:40px_40px] dark:bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)]" />
+        </div>
 
-        <div className="relative mx-auto max-w-4xl space-y-12 text-center">
-          <div className="space-y-6">
-            <h1 className="text-6xl font-bold tracking-tight md:text-7xl lg:text-8xl">
+        <div className="relative mx-auto max-w-5xl space-y-12 text-center">
+          <div className="space-y-8">
+            <h1 className="text-6xl font-black tracking-tight md:text-8xl lg:text-9xl">
               Next Template
               <br />
-              <span className="bg-gradient-to-r from-zinc-900 via-zinc-500 to-zinc-400 bg-clip-text text-transparent dark:from-neutral-200 dark:via-neutral-400 dark:to-neutral-600">
-                By Patrick
+              <span className="relative inline-block">
+                <span className="bg-gradient-to-b from-zinc-900 via-zinc-700 to-zinc-500 bg-clip-text text-transparent dark:from-neutral-100 dark:via-neutral-400 dark:to-neutral-600">
+                  By Patrick
+                </span>
               </span>
             </h1>
 
-            <p className="mx-auto max-w-2xl text-lg text-zinc-600 md:text-xl dark:text-neutral-400">
+            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-zinc-600 md:text-xl dark:text-neutral-400">
               Full-stack Next.js 16 starter with auth, database, type safety,
               and dark mode. Everything configured so you can build your pet
-              projects right away
+              projects right away.
             </p>
           </div>
 
-          <div className="animate-in fade-in slide-in-from-bottom-6 flex flex-col items-center gap-6 delay-300 duration-1000">
+          <div className="animate-in fade-in slide-in-from-bottom-6 flex flex-col items-center gap-10 delay-300 duration-1000">
             <div className="flex flex-wrap justify-center gap-4">
               <button
                 onClick={handleCopy}
-                className="h-12 rounded-full border-2 border-zinc-900 bg-zinc-900 px-8 font-bold text-white transition-all hover:bg-zinc-800 hover:shadow-xl hover:shadow-zinc-900/20 active:scale-95 dark:border-neutral-50 dark:bg-neutral-50 dark:text-neutral-900 dark:hover:bg-neutral-200 dark:hover:shadow-neutral-50/10"
+                className="group relative h-14 rounded-full bg-zinc-900 px-10 font-bold text-white transition-all hover:bg-zinc-800 hover:shadow-2xl hover:shadow-zinc-900/30 active:scale-95 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-200 dark:hover:shadow-neutral-50/20"
               >
-                {copied ? 'Copied!' : 'Get Started'}
+                <span className="relative z-10 flex items-center gap-2">
+                  {copied ? 'Copied to Clipboard' : 'Get Started Now'}
+                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                </span>
               </button>
               <Link
                 href="https://github.com/beefysalad/next-prisma-template"
@@ -67,58 +74,52 @@ export default function Home() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="flex h-12 items-center gap-2 rounded-full border-2 border-zinc-200 px-8 font-bold transition-all hover:bg-zinc-100 hover:shadow-lg active:scale-95 dark:border-neutral-800 dark:hover:bg-neutral-900 dark:hover:shadow-neutral-900/40"
+                  className="h-14 rounded-full border-2 border-zinc-200 px-10 font-bold transition-all hover:bg-zinc-50 hover:shadow-lg active:scale-95 dark:border-neutral-800 dark:hover:bg-neutral-900"
                 >
-                  <Github className="size-4" />
-                  View on GitHub
+                  <Github className="size-5" />
+                  GitHub Repository
                 </Button>
               </Link>
             </div>
 
             <div className="flex flex-col items-center gap-4">
-              <div className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1 text-[10px] font-bold tracking-wider text-zinc-400 uppercase dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-500">
-                <ShieldCheck className="size-3" />
-                Live Auth Demo
-              </div>
-              <div className="flex flex-wrap items-center justify-center gap-3">
+              <div className="flex flex-wrap items-center justify-center gap-3 rounded-2xl border border-zinc-100 bg-zinc-50/30 p-1 backdrop-blur-md dark:border-neutral-800/50 dark:bg-neutral-900/30">
                 <Link href="/register">
                   <Button
                     variant="ghost"
                     size="sm"
-                    className="h-10 rounded-full border border-zinc-200 bg-zinc-50 px-6 font-semibold transition-all hover:bg-zinc-100 hover:text-zinc-900 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-200"
+                    className="h-11 rounded-xl px-6 font-bold text-zinc-600 transition-all hover:bg-white hover:text-zinc-900 hover:shadow-sm dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
                   >
-                    Create Account
+                    Demo Register
                   </Button>
                 </Link>
-                <div className="h-4 w-[1px] bg-zinc-200 dark:bg-neutral-800" />
                 <Link href="/login">
                   <Button
                     variant="ghost"
                     size="sm"
-                    className="h-10 rounded-full border border-zinc-200 bg-zinc-50 px-6 font-semibold transition-all hover:bg-zinc-100 hover:text-zinc-900 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-200"
+                    className="h-11 rounded-xl px-6 font-bold text-zinc-600 transition-all hover:bg-white hover:text-zinc-900 hover:shadow-sm dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
                   >
-                    Sign In
+                    Demo Login
                   </Button>
                 </Link>
               </div>
-              <p className="text-xs text-zinc-400 dark:text-neutral-500">
-                Try the full registration and login flow with session
-                persistence.
+              <p className="flex items-center gap-2 text-xs font-medium text-zinc-400 dark:text-neutral-500">
+                <ShieldCheck className="size-3.5 text-emerald-500" />
+                Click the two buttons above to see the auth in action
               </p>
             </div>
           </div>
 
-          <div className="mx-auto max-w-2xl">
-            <div className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-50/50 p-1 backdrop-blur transition-all hover:border-zinc-300 dark:border-neutral-800 dark:bg-neutral-900/50">
-              <div className="flex items-center gap-3 p-4">
-                <Terminal className="size-5 flex-shrink-0 text-zinc-400 dark:text-neutral-500" />
-                <code className="flex-1 text-left font-mono text-sm text-zinc-700 dark:text-neutral-300">
-                  npx create-next-app -e
-                  https://github.com/beefysalad/next-prisma-template
+          <div className="mx-auto max-w-xl">
+            <div className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white/50 p-2 shadow-sm backdrop-blur transition-all hover:border-zinc-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900/50">
+              <div className="flex items-center gap-3 px-4 py-2">
+                <Terminal className="size-4 flex-shrink-0 text-zinc-400 dark:text-neutral-500" />
+                <code className="flex-1 text-left font-mono text-[13px] text-zinc-600 dark:text-neutral-400">
+                  npx create-next-app -e beefysalad/next-prisma-template
                 </code>
                 <button
                   onClick={handleCopy}
-                  className="flex-shrink-0 rounded-md border border-zinc-300 bg-zinc-200 px-3 py-1.5 text-xs font-medium text-zinc-700 transition-all hover:bg-zinc-300 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
+                  className="flex size-8 items-center justify-center rounded-lg bg-zinc-100 text-zinc-500 transition-all hover:bg-zinc-900 hover:text-white dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-50 dark:hover:text-neutral-900"
                 >
                   {copied ? (
                     <Check className="size-4" />
@@ -128,59 +129,51 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            <p className="mt-3 text-sm text-zinc-500">
-              Or{' '}
-              <Link
-                href="https://github.com/beefysalad/next-prisma-template"
-                target="_blank"
-                className="text-zinc-600 underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-zinc-900 dark:text-neutral-400 dark:decoration-neutral-700 dark:hover:text-neutral-300"
-              >
-                clone from GitHub
-              </Link>
-            </p>
           </div>
         </div>
       </section>
 
       <section className="border-t border-zinc-200 px-6 py-24 md:py-32 dark:border-neutral-800">
         <div className="mx-auto max-w-6xl">
-          <div className="mb-16 space-y-4">
-            <h2 className="text-3xl font-bold md:text-4xl">What's inside</h2>
-            <p className="text-lg text-zinc-600 dark:text-neutral-400">
-              The stack I actually use for my pet projects.
+          <div className="mb-16 space-y-4 text-center md:text-left">
+            <h2 className="text-4xl font-bold tracking-tight md:text-5xl">
+              What&apos;s inside
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg text-zinc-600 md:mx-0 dark:text-neutral-400">
+              A carefully curated stack of modern tools designed for speed,
+              safety, and developer experience.
             </p>
           </div>
-
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <StackCard
-              icon={<Code2 className="size-6" />}
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-12 md:grid-rows-2">
+            <BentoItem
+              className="md:col-span-8 md:row-span-1"
+              icon={<Code2 className="size-8 text-blue-500" />}
               title="Next.js 16 App Router"
-              description="Server Components, Server Actions, and React 19. The bleeding edge, but stable enough to actually use."
+              description="Server Components, Server Actions, and React 19. The bleeding edge, but stable enough to actually use for high-performance applications."
             />
-            <StackCard
-              icon={<Database className="size-6" />}
-              title="Prisma + PostgreSQL"
-              description="Type-safe queries, auto-generated types, and migrations that work. No more raw SQL strings."
+            <BentoItem
+              className="md:col-span-4 md:row-span-1"
+              icon={<Database className="size-8 text-emerald-500" />}
+              title="Prisma 7"
+              description="Type-safe queries and auto-generated types for Postgres."
             />
-            <StackCard
-              icon={<ShieldCheck className="size-6" />}
-              title="Auth.js v5 (NextAuth)"
-              description="Credentials, OAuth, magic links. Sessions that persist. Middleware that protects routes."
+            <BentoItem
+              className="md:col-span-4 md:row-span-1"
+              icon={<ShieldCheck className="size-8 text-indigo-500" />}
+              title="Auth.js v5"
+              description="Secure authentication that just works out of the box."
             />
-            <StackCard
-              icon={<Zap className="size-6" />}
+            <BentoItem
+              className="md:col-span-4 md:row-span-1"
+              icon={<Zap className="size-8 text-amber-500" />}
               title="TanStack Query"
-              description="Smart caching, background refetching, optimistic updates. Makes data fetching feel native."
+              description="Smart caching and optimistic updates for your data."
             />
-            <StackCard
-              icon={<Terminal className="size-6" />}
-              title="TypeScript + Zod"
-              description="Runtime validation with Zod schemas. Compile-time safety with TypeScript. No surprises in prod."
-            />
-            <StackCard
-              icon={<Github className="size-6" />}
-              title="Tailwind CSS 4 + Dark Mode"
-              description="Utility-first styling with next-themes integration. Dark mode that actually works out of the box."
+            <BentoItem
+              className="md:col-span-4 md:row-span-1"
+              icon={<Github className="size-8 text-zinc-900 dark:text-white" />}
+              title="Tailwind 4"
+              description="CSS-first utility styling for a modern look."
             />
           </div>
         </div>
@@ -280,6 +273,7 @@ export default function Home() {
             <Contributor
               name="beefysalad"
               github="https://github.com/beefysalad"
+              image="/ptrck.jpg"
             />
           </div>
         </div>
@@ -297,6 +291,7 @@ export default function Home() {
             <Link
               href="https://github.com/beefysalad/next-prisma-template"
               className="transition-colors hover:text-zinc-900 dark:hover:text-neutral-400"
+              target="_blank"
             >
               GitHub
             </Link>
@@ -319,24 +314,33 @@ export default function Home() {
   )
 }
 
-function StackCard({
+function BentoItem({
   icon,
   title,
   description,
+  className,
 }: {
   icon: React.ReactNode
   title: string
   description: string
+  className?: string
 }) {
   return (
-    <div className="group relative overflow-hidden rounded-lg border border-zinc-200 bg-white p-6 backdrop-blur transition-all hover:border-zinc-300 dark:border-neutral-800 dark:bg-neutral-900/50 dark:hover:border-neutral-700">
-      <div className="mb-4 inline-flex size-12 items-center justify-center rounded-md bg-zinc-100 text-zinc-500 group-hover:bg-zinc-200 group-hover:text-zinc-700 dark:bg-neutral-800 dark:text-neutral-400 dark:group-hover:bg-neutral-700 dark:group-hover:text-neutral-300">
-        {icon}
+    <div
+      className={`group relative overflow-hidden rounded-3xl border border-zinc-200 bg-white p-8 transition-all hover:border-zinc-300 dark:border-neutral-800 dark:bg-neutral-900/50 dark:hover:border-neutral-700 ${className}`}
+    >
+      <div className="relative z-10 space-y-4">
+        <div className="inline-flex size-14 items-center justify-center rounded-2xl bg-zinc-50 shadow-sm transition-transform group-hover:scale-110 dark:bg-neutral-800">
+          {icon}
+        </div>
+        <div className="space-y-2">
+          <h3 className="text-xl font-bold tracking-tight">{title}</h3>
+          <p className="text-sm leading-relaxed text-zinc-500 dark:text-neutral-400">
+            {description}
+          </p>
+        </div>
       </div>
-      <h3 className="mb-2 text-lg font-semibold">{title}</h3>
-      <p className="text-sm leading-relaxed text-zinc-600 dark:text-neutral-400">
-        {description}
-      </p>
+      <div className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-zinc-100/50 to-transparent p-24 opacity-0 transition-opacity group-hover:opacity-100 dark:from-neutral-800/50" />
     </div>
   )
 }
@@ -363,15 +367,27 @@ function ContributeStep({
   )
 }
 
-function Contributor({ name, github }: { name: string; github: string }) {
+function Contributor({
+  name,
+  github,
+  image,
+}: {
+  name: string
+  github: string
+  image?: string
+}) {
   return (
     <Link
       href={github}
       target="_blank"
       className="group flex flex-col items-center gap-2"
     >
-      <div className="flex size-16 items-center justify-center rounded-full border border-zinc-200 bg-white shadow-lg shadow-zinc-200/50 transition-all group-hover:scale-110 group-hover:border-zinc-900 group-hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-none dark:group-hover:border-neutral-50">
-        <Github className="size-8 text-zinc-400 group-hover:text-zinc-900 dark:text-neutral-500 dark:group-hover:text-neutral-100" />
+      <div className="flex size-16 items-center justify-center overflow-hidden rounded-full border border-zinc-200 bg-white text-neutral-50 shadow-lg shadow-zinc-200/50 transition-all group-hover:scale-110 group-hover:border-zinc-900 group-hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-none dark:group-hover:border-neutral-50">
+        {image ? (
+          <img src={image} alt={name} className="h-full w-full object-cover" />
+        ) : (
+          <Github className="size-8 text-zinc-400 group-hover:text-zinc-900 dark:text-neutral-500 dark:group-hover:text-neutral-100" />
+        )}
       </div>
       <span className="text-sm font-bold text-zinc-600 group-hover:text-zinc-900 dark:text-neutral-400 dark:group-hover:text-neutral-100">
         {name}

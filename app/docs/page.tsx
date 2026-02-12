@@ -49,7 +49,6 @@ export default function DocsPage() {
             </p>
           </header>
 
-          {/* Quick Start */}
           <section className="space-y-8">
             <div className="flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-xl bg-zinc-900 text-white dark:bg-neutral-50 dark:text-neutral-900">
@@ -112,7 +111,6 @@ npm install`}</code>
             </div>
           </section>
 
-          {/* Architecture */}
           <section className="space-y-12">
             <div className="flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-xl bg-zinc-900 text-white dark:bg-neutral-50 dark:text-neutral-900">
@@ -183,7 +181,6 @@ npm install`}</code>
             </div>
           </section>
 
-          {/* Development Patterns */}
           <section className="space-y-12">
             <div className="flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-xl bg-zinc-900 text-white dark:bg-neutral-50 dark:text-neutral-900">
@@ -247,7 +244,6 @@ npm install`}</code>
             </div>
           </section>
 
-          {/* Folder Structure */}
           <section className="space-y-8">
             <div className="flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-xl bg-zinc-900 text-white dark:bg-neutral-50 dark:text-neutral-900">
@@ -326,7 +322,6 @@ npm install`}</code>
             </div>
           </section>
 
-          {/* Customization Guide */}
           <section className="space-y-12 border-t border-zinc-200 pt-16 dark:border-neutral-800">
             <div className="flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500 text-white">
@@ -442,7 +437,6 @@ npm install`}</code>
                 </div>
               </div>
 
-              {/* Clean up */}
               <div className="rounded-2xl border border-zinc-200 bg-zinc-50/50 p-8 dark:border-neutral-800 dark:bg-neutral-900/30">
                 <h3 className="mb-4 text-xl font-bold">
                   5. Production Cleanup
@@ -488,8 +482,12 @@ npm install`}</code>
                 target="_blank"
                 className="group flex items-center gap-3 rounded-2xl border border-zinc-200 bg-zinc-50/50 p-4 transition-all hover:border-zinc-900 hover:bg-white dark:border-neutral-800 dark:bg-neutral-900/30 dark:hover:border-neutral-50 dark:hover:bg-neutral-900"
               >
-                <div className="flex size-10 items-center justify-center rounded-full bg-zinc-900 text-white dark:bg-neutral-50 dark:text-neutral-900">
-                  <Github className="size-5" />
+                <div className="flex size-10 items-center justify-center overflow-hidden rounded-full bg-zinc-900 text-white dark:bg-neutral-50 dark:text-neutral-900">
+                  <img
+                    src="/ptrck.jpg"
+                    alt="beefysalad"
+                    className="h-full w-full object-cover"
+                  />
                 </div>
                 <div>
                   <div className="font-bold">beefysalad</div>
