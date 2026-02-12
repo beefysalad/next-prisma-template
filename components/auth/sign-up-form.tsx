@@ -1,21 +1,16 @@
 'use client'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '../ui/card'
 
-import { useAuthMutations } from '@/hooks/useAuth'
-import { RegisterSchema, TRegisterSchema } from '@/lib/schemas/auth'
 import { zodResolver } from '@hookform/resolvers/zod'
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
-import { Button } from '../ui/button'
+import { User, Mail, Lock, ArrowRight, Loader2 } from 'lucide-react'
+
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { RegisterSchema, TRegisterSchema } from '@/lib/schemas/auth'
 import FormErrorMessage from '../ui/form-error-message'
-import { Input } from '../ui/input'
-import { Label } from '../ui/label'
+import { useAuthMutations } from '@/hooks/useAuth'
 
 const SignUpForm = () => {
   const { registerMutation } = useAuthMutations()
@@ -34,72 +29,102 @@ const SignUpForm = () => {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center px-4 py-12">
-      <div className="w-full max-w-md">
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-white px-4 selection:bg-zinc-900 selection:text-white dark:bg-neutral-950 dark:selection:bg-neutral-50 dark:selection:text-neutral-900">
+      {/* Background Gradients */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-[10%] -left-[10%] size-[40%] rounded-full bg-blue-500/10 blur-[120px] dark:bg-blue-500/5" />
+        <div className="absolute -right-[10%] -bottom-[10%] size-[40%] rounded-full bg-orange-500/10 blur-[120px] dark:bg-orange-500/5" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:40px_40px] dark:bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)]" />
+      </div>
+
+      <div className="animate-in fade-in slide-in-from-bottom-4 relative w-full max-w-[480px] duration-1000">
         <div className="mb-8 text-center">
-          <h1 className="mb-2 text-3xl font-bold">Create Account</h1>
-          <p className="text-muted-foreground">Join us to get started</p>
+          <Link
+            href="/"
+            className="group inline-flex items-center gap-2 text-sm font-medium text-zinc-500 transition-colors hover:text-zinc-900 dark:hover:text-neutral-300"
+          >
+            <ArrowRight className="size-4 rotate-180 transition-transform group-hover:-translate-x-1" />
+            Back to home
+          </Link>
+          <h1 className="mt-4 text-4xl font-bold tracking-tight">
+            Create account
+          </h1>
+          <p className="mt-2 text-zinc-600 dark:text-neutral-400">
+            Join the developers building with this template
+          </p>
         </div>
 
-        <Card>
-          <CardHeader className="pb-4">
-            <CardTitle className="text-xl">Sign Up</CardTitle>
-            <CardDescription>
-              Fill in your details to create an account
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="name">
-                  Full Name <span className="text-destructive">*</span>
-                </Label>
+        <div className="overflow-hidden rounded-3xl border border-zinc-200 bg-white/50 p-8 shadow-2xl shadow-zinc-200/50 backdrop-blur-xl dark:border-neutral-800 dark:bg-neutral-900/50 dark:shadow-none">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+            <div className="space-y-2">
+              <Label
+                htmlFor="name"
+                className="text-xs font-bold tracking-widest text-zinc-500 uppercase"
+              >
+                Full Name
+              </Label>
+              <div className="relative">
+                <User className="absolute top-3 left-3 size-4 text-zinc-400" />
                 <Input
+                  {...form.register('name')}
                   id="name"
                   type="text"
                   placeholder="John Doe"
-                  {...form.register('name')}
                   disabled={registerMutation.isPending}
-                  className="w-full"
+                  className="h-11 border-zinc-200 bg-transparent pl-10 transition-all focus:border-zinc-900 focus:ring-4 focus:ring-zinc-900/5 dark:border-neutral-800 dark:focus:border-neutral-50 dark:focus:ring-neutral-50/5"
                 />
-                {form.formState.errors.name && (
-                  <FormErrorMessage
-                    message={form.formState.errors.name.message}
-                  />
-                )}
               </div>
+              {form.formState.errors.name && (
+                <FormErrorMessage
+                  message={form.formState.errors.name.message}
+                />
+              )}
+            </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="email">
-                  Email <span className="text-destructive">*</span>
-                </Label>
+            <div className="space-y-2">
+              <Label
+                htmlFor="email"
+                className="text-xs font-bold tracking-widest text-zinc-500 uppercase"
+              >
+                Email Address
+              </Label>
+              <div className="relative">
+                <Mail className="absolute top-3 left-3 size-4 text-zinc-400" />
                 <Input
+                  {...form.register('email')}
                   id="email"
                   type="email"
-                  placeholder="you@example.com"
-                  {...form.register('email')}
+                  placeholder="name@example.com"
                   disabled={registerMutation.isPending}
-                  className="w-full"
+                  className="h-11 border-zinc-200 bg-transparent pl-10 transition-all focus:border-zinc-900 focus:ring-4 focus:ring-zinc-900/5 dark:border-neutral-800 dark:focus:border-neutral-50 dark:focus:ring-neutral-50/5"
                 />
-                {form.formState.errors.email && (
-                  <FormErrorMessage
-                    message={form.formState.errors.email.message}
-                  />
-                )}
               </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="password">
-                  Password <span className="text-destructive">*</span>
-                </Label>
-                <Input
-                  id="password"
-                  type="password"
-                  placeholder="••••••••"
-                  {...form.register('password')}
-                  disabled={registerMutation.isPending}
-                  className="w-full"
+              {form.formState.errors.email && (
+                <FormErrorMessage
+                  message={form.formState.errors.email.message}
                 />
+              )}
+            </div>
+
+            <div className="grid gap-5 md:grid-cols-2">
+              <div className="space-y-2">
+                <Label
+                  htmlFor="password"
+                  className="text-xs font-bold tracking-widest text-zinc-500 uppercase"
+                >
+                  Password
+                </Label>
+                <div className="relative">
+                  <Lock className="absolute top-3 left-3 size-4 text-zinc-400" />
+                  <Input
+                    {...form.register('password')}
+                    id="password"
+                    type="password"
+                    placeholder="••••••••"
+                    disabled={registerMutation.isPending}
+                    className="h-11 border-zinc-200 bg-transparent pl-10 transition-all focus:border-zinc-900 focus:ring-4 focus:ring-zinc-900/5 dark:border-neutral-800 dark:focus:border-neutral-50 dark:focus:ring-neutral-50/5"
+                  />
+                </div>
                 {form.formState.errors.password && (
                   <FormErrorMessage
                     message={form.formState.errors.password.message}
@@ -108,51 +133,62 @@ const SignUpForm = () => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="confirmPassword">
-                  Confirm Password <span className="text-destructive">*</span>
+                <Label
+                  htmlFor="confirmPassword"
+                  className="text-xs font-bold tracking-widest text-zinc-500 uppercase"
+                >
+                  Confirm
                 </Label>
-                <Input
-                  id="confirmPassword"
-                  type="password"
-                  placeholder="••••••••"
-                  {...form.register('confirmPassword')}
-                  disabled={registerMutation.isPending}
-                  className="w-full"
-                />
+                <div className="relative">
+                  <Lock className="absolute top-3 left-3 size-4 text-zinc-400" />
+                  <Input
+                    {...form.register('confirmPassword')}
+                    id="confirmPassword"
+                    type="password"
+                    placeholder="••••••••"
+                    disabled={registerMutation.isPending}
+                    className="h-11 border-zinc-200 bg-transparent pl-10 transition-all focus:border-zinc-900 focus:ring-4 focus:ring-zinc-900/5 dark:border-neutral-800 dark:focus:border-neutral-50 dark:focus:ring-neutral-50/5"
+                  />
+                </div>
                 {form.formState.errors.confirmPassword && (
                   <FormErrorMessage
                     message={form.formState.errors.confirmPassword.message}
                   />
                 )}
               </div>
-
-              {registerMutation.error && (
-                <div className="bg-destructive/10 border-destructive/20 text-destructive rounded border p-3 text-sm">
-                  {registerMutation.error.message}
-                </div>
-              )}
-
-              <Button
-                type="submit"
-                disabled={registerMutation.isPending}
-                className="w-full"
-              >
-                {registerMutation.isPending
-                  ? 'Creating account...'
-                  : 'Create Account'}
-              </Button>
-            </form>
-
-            <div className="mt-6 border-t pt-6">
-              <p className="text-muted-foreground text-center text-sm">
-                Already have an account?{' '}
-                <Link href="/login" className="font-semibold hover:underline">
-                  Sign in
-                </Link>
-              </p>
             </div>
-          </CardContent>
-        </Card>
+
+            {registerMutation.error && (
+              <div className="rounded-xl border border-red-200 bg-red-50 p-3 text-sm font-medium text-red-600 dark:border-red-900/50 dark:bg-red-900/20 dark:text-red-400">
+                {registerMutation.error.message}
+              </div>
+            )}
+
+            <Button
+              type="submit"
+              disabled={registerMutation.isPending}
+              className="mt-2 h-12 w-full rounded-full border-2 border-zinc-900 bg-zinc-900 font-bold text-white transition-all hover:bg-zinc-800 hover:shadow-xl hover:shadow-zinc-900/20 active:scale-[0.98] dark:border-neutral-50 dark:bg-neutral-50 dark:text-neutral-900 dark:hover:bg-neutral-200"
+            >
+              {registerMutation.isPending ? (
+                <Loader2 className="mr-2 size-4 animate-spin" />
+              ) : (
+                'Create Account'
+              )}
+            </Button>
+          </form>
+
+          <div className="mt-8 pt-6 text-center">
+            <p className="text-sm text-zinc-500">
+              Already have an account?{' '}
+              <Link
+                href="/login"
+                className="font-bold text-zinc-900 transition-colors hover:text-zinc-700 dark:text-neutral-100 dark:hover:text-neutral-300"
+              >
+                Sign in instead
+              </Link>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   )
