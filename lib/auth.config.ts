@@ -28,8 +28,8 @@ export default {
         session.user.id = token.sub
       }
       if (session.user && token.createdAt) {
-        
-        session.user.createdAt = token.createdAt
+       
+        session.user.createdAt = token.createdAt as string
       }
       return session
     },

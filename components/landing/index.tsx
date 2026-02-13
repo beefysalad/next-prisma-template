@@ -202,8 +202,8 @@ const Landing = () => {
               template for me and maybe for you too! :3
             </p>
             <p>
-              Clone it, change the database URL, and you're building features.
-              That's it.
+              Clone it, change the database URL, and you&apos;re building features.
+              That&apos;s it.
             </p>
           </div>
 
