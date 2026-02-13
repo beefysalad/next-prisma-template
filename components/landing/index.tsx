@@ -24,7 +24,7 @@ const Landing = () => {
 
   const handleCopy = () => {
     navigator.clipboard.writeText(
-      'npx create-next-app -e https://github.com/beefysalad/next-prisma-template'
+      'npx create-next-app -e https://github.com/beefysalad/nexion'
     )
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
@@ -71,7 +71,7 @@ const Landing = () => {
                 </span>
               </button>
               <Link
-                href="https://github.com/beefysalad/next-prisma-template"
+                href="https://github.com/beefysalad/nexion"
                 target="_blank"
                 className="w-full sm:w-auto"
               >
@@ -119,7 +119,7 @@ const Landing = () => {
               <div className="flex items-center gap-3 px-4 py-2">
                 <Terminal className="size-4 flex-shrink-0 text-zinc-400 dark:text-neutral-500" />
                 <code className="flex-1 overflow-x-auto text-left font-mono text-[13px] text-zinc-600 dark:text-neutral-400">
-                  npx create-next-app -e beefysalad/next-prisma-template
+                  npx create-next-app -e beefysalad/nexion
                 </code>
                 <button
                   onClick={handleCopy}
@@ -209,7 +209,7 @@ const Landing = () => {
 
           <div className="mt-12 flex w-full flex-col gap-4 sm:flex-row sm:flex-wrap">
             <Link
-              href="https://github.com/beefysalad/next-prisma-template"
+              href="https://github.com/beefysalad/nexion"
               target="_blank"
               className="w-full sm:w-auto"
             >
@@ -241,7 +241,7 @@ const Landing = () => {
             Want to contribute?
           </h2>
           <p className="mb-12 text-lg text-zinc-600 dark:text-neutral-400">
-            Found a bug? Have an idea? Wanna collaborate on this? Im always open
+            Found a bug? Have an idea? Wanna collaborate on this? I&apos;m always open
             to collaborations so open an issue or submit a PR. Just keep it
             clean and follow the existing patterns.
           </p>
@@ -299,7 +299,7 @@ const Landing = () => {
           </div>
           <div className="flex gap-8 text-sm text-zinc-500">
             <Link
-              href="https://github.com/beefysalad/next-prisma-template"
+              href="https://github.com/beefysalad/nexion"
               className="transition-colors hover:text-zinc-900 dark:hover:text-neutral-400"
               target="_blank"
             >
@@ -312,7 +312,7 @@ const Landing = () => {
               Docs
             </Link>
             <Link
-              href="https://github.com/beefysalad/next-prisma-template/issues"
+              href="https://github.com/beefysalad/nexion/issues"
               className="transition-colors hover:text-zinc-900 dark:hover:text-neutral-400"
             >
               Issues

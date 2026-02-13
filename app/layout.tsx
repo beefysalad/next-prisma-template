@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Nexion - Fullstack Template',
   description:
-    'A standard boilerplate for Next.js + Prisma applications. Created by Patrick',
+    'Nexion is a full-stack Next.js template with auth, database, and type safety. Created by Patrick',
 }
 
 export default function RootLayout({
