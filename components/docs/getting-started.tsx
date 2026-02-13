@@ -18,8 +18,8 @@ const GettingStarted = () => {
               Clone the repo and verify prerequisites: Node 18+ and PostgreSQL.
             </p>
             <pre className="overflow-x-auto rounded-xl bg-zinc-900 p-5 font-mono text-sm text-zinc-300 dark:bg-neutral-950">
-              <code className="block break-all whitespace-pre-wrap">{`git clone <repo-url>
-cd my-app
+              <code className="block break-all whitespace-pre-wrap">{`git clone https://github.com/beefysalad/nexion.git
+cd nexion
 npm install`}</code>
             </pre>
           </div>
@@ -61,7 +61,6 @@ npm run dev`}</code>
         <div className="rounded-xl bg-zinc-900 p-5 font-mono text-sm text-zinc-300 dark:bg-neutral-950">
           <div className="space-y-1">
             <div>DATABASE_URL="postgresql://..."</div>
-            <div>NEXTAUTH_URL="http://localhost:3000"</div>
             <div>AUTH_SECRET="your-secret-key"</div>
           </div>
         </div>

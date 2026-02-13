@@ -1,4 +1,4 @@
-# Next.js Prisma Boilerplate
+# Nexion - Next.js 16 Boilerplate
 
 A modern Next.js 16 boilerplate with Prisma ORM, PostgreSQL, TypeScript, and Tailwind CSS. This project provides a solid foundation for building full-stack web applications with best practices and developer experience in mind.
 
@@ -27,8 +27,8 @@ A modern Next.js 16 boilerplate with Prisma ORM, PostgreSQL, TypeScript, and Tai
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/beefysalad/next-prisma-template.git
-cd next-boilerplate-prisma
+git clone https://github.com/beefysalad/nexion.git
+cd nexion
 ```
 
 2. Install dependencies:
