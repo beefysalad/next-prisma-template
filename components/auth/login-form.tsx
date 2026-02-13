@@ -3,14 +3,7 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
-import {
-  Github,
-  Mail,
-  Lock,
-  ArrowRight,
-  Loader2,
-  ShieldCheck,
-} from 'lucide-react'
+import { ArrowRight, Loader2, ShieldCheck } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
