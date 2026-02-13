@@ -260,7 +260,7 @@ const Landing = () => {
             <ContributeStep
               num="3"
               title="Open a pull request"
-              desc="Describe what you changed and why. I'll review it when I can (Ill probably do a LGTM right away~)."
+              desc={  `Describe what you changed and why. I'll review it when I can (I will probably do a LGTM right away~).`}
             />
           </div>
         </div>
